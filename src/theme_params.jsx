@@ -27,6 +27,45 @@ const BtnRedColorHover = "#f1556c";
 const TableHeaderBgColor = "#1c4f9b";
 const TableHeaderTxtColor = "#ffffff";
 const TableEvenRowColor = "#cfcfcf";
+const SnackbarBottom=10+FooterHeight;
+const SnackbarAlertStyles = {
+    success: {
+        backgroundColor: '#befbf9',
+        color: '#17732c',
+        '& .MuiAlert-icon': {
+            color: '#17732c',
+        },
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    },
+    error: {
+        backgroundColor: '#da9da5',
+        color: '#9b1c2f',
+        '& .MuiAlert-icon': {
+            color: '#9b1c2f',
+        },
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    },
+    warning: {
+        backgroundColor: '#f6b675',
+        color: '#815a30',
+        '& .MuiAlert-icon': {
+            color: '#815a30',
+        },
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    },
+    info: {
+        backgroundColor: '#95ede9',
+        color: '#208e88',
+        '& .MuiAlert-icon': {
+            color: '#208e88',
+        },
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    },
+};
 // Create a custom theme
 const theme = createTheme({
     direction: 'rtl',

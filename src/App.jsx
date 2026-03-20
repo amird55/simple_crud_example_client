@@ -5,6 +5,8 @@ import './App.css'
 import { RouterProvider} from 'react-router';
 import router from "./Routers/main_R";
 
+import {ToastProvider} from "./contexts/ToastContext.jsx";
+
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import rtlPlugin from 'stylis-plugin-rtl';
@@ -23,12 +25,14 @@ const cacheRtl = createCache({
 function App() {
 
   return (
-      <CacheProvider value={cacheRtl}>
-          <ThemeProvider theme={theme}>
-              <CssBaseline /> {/* This normalizes the styles */}
-              <RouterProvider router={router} />
-          </ThemeProvider>
-      </CacheProvider>
+      <ToastProvider >
+          <CacheProvider value={cacheRtl}>
+              <ThemeProvider theme={theme}>
+                  <CssBaseline /> {/* This normalizes the styles */}
+                  <RouterProvider router={router} />
+              </ThemeProvider>
+          </CacheProvider>
+      </ToastProvider>
   )
 }
 
