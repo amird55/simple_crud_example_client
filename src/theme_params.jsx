@@ -66,6 +66,28 @@ const SnackbarAlertStyles = {
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     },
 };
+const ConfirmDialogColors = {
+    success: {
+        backgroundColor: '#90e6e2',
+        confirmButtonColor: '#106a28',
+        cancelButtonColor: '#757575'
+    },
+    delete: {
+        backgroundColor: '#ed6b2d',
+        confirmButtonColor: '#9b1c2f',
+        cancelButtonColor: '#757575'
+    },
+    warning: {
+        backgroundColor: '#fce5a0',
+        confirmButtonColor: '#faad3c',
+        cancelButtonColor: '#757575'
+    },
+    info: {
+        backgroundColor: '#a0eefd',
+        confirmButtonColor: '#0e8498',
+        cancelButtonColor: '#757575'
+    }
+};
 // Create a custom theme
 const theme = createTheme({
     direction: 'rtl',

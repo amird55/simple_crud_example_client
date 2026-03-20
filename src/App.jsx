@@ -1,4 +1,4 @@
-//npm install react-router @mui/material @emotion/react @emotion/styled @mui/icons-material   stylis-plugin-rtl @emotion/cache 
+//npm install react-router @mui/material @emotion/react @emotion/styled @mui/icons-material   stylis-plugin-rtl @emotion/cache material-ui-confirm   
 
 import './App.css'
 
@@ -6,6 +6,7 @@ import { RouterProvider} from 'react-router';
 import router from "./Routers/main_R";
 
 import {ToastProvider} from "./contexts/ToastContext.jsx";
+import { ConfirmProvider } from 'material-ui-confirm';
 
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
@@ -25,14 +26,32 @@ const cacheRtl = createCache({
 function App() {
 
   return (
-      <ToastProvider >
-          <CacheProvider value={cacheRtl}>
-              <ThemeProvider theme={theme}>
-                  <CssBaseline /> {/* This normalizes the styles */}
-                  <RouterProvider router={router} />
-              </ThemeProvider>
-          </CacheProvider>
-      </ToastProvider>
+      <ConfirmProvider
+          defaultOptions={{
+              dialogProps: {
+                  PaperProps: {
+                      sx: {
+                          borderRadius: '12px',
+                      },
+                  }
+              },
+              confirmationButtonProps: {
+                  variant: 'contained',
+              },
+              cancellationButtonProps: {
+                  variant: 'outlined',
+              }
+          }}
+      >
+          <ToastProvider >
+              <CacheProvider value={cacheRtl}>
+                  <ThemeProvider theme={theme}>
+                      <CssBaseline /> {/* This normalizes the styles */}
+                      <RouterProvider router={router} />
+                  </ThemeProvider>
+              </CacheProvider>
+          </ToastProvider>
+      </ConfirmProvider>
   )
 }
 
