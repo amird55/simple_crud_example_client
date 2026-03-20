@@ -1,0 +1,47 @@
+import React from 'react';
+import { AppBar, Toolbar, Typography, IconButton, useMediaQuery, useTheme, Box
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { PageTitle, HeaderHeight } from "../vars.jsx";
+
+function Header({ onMenuClick , title = PageTitle}) {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    document.title = title;
+    
+    return (
+        <AppBar
+            position="static"
+            sx={{
+                height: `${HeaderHeight}px`,
+                '& .MuiToolbar-root': {
+                    height: `${HeaderHeight}px`,
+                    minHeight: `${HeaderHeight}px`
+                }
+            }}
+        >
+            <Toolbar>
+                {isMobile && (
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                        onClick={onMenuClick}
+                        sx={{ mr: 2 }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                )}
+                <Typography variant="h6" component="h1" sx={{pr:3}}>
+                    {PageTitle}
+                </Typography>
+            
+                {/* Spacer to push content to the edges */}
+                <Box sx={{ flexGrow: 1 }} />
+
+            </Toolbar>
+        </AppBar>
+    );
+}
+
+export default Header;
