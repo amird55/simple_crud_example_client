@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, IconButton, useMediaQuery, useTheme, Box
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { PageTitle, HeaderHeight } from "../vars.jsx";
+import { PageTitle, HeaderHeight } from "../theme_params.jsx";
 
 function Header({ onMenuClick , title = PageTitle}) {
     const theme = useTheme();

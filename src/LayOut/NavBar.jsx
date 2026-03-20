@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { NavLink,useLocation } from 'react-router';
 import { navItems } from '../Routers/main_R';
-import { menuWidth } from "../vars.jsx";
+import { menuWidth } from "../theme_params.jsx";
 
 const NavBar = ({ mobileOpen, onClose }) => {
     const theme = useTheme();

@@ -1,5 +1,5 @@
 import { Paper, Box, Typography } from '@mui/material';
-import {FooterHeight, FooterTxtColor} from '../vars';
+import {FooterHeight, FooterTxtColor} from '../theme_params.jsx';
 import React from "react";
 
 function Footer() {
