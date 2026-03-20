@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Add useState import
+import React, { useState,useMemo } from 'react'; // Add useState import
 import Header from "./Header";
 import NavBar from "./NavBar";
 import Footer from "./Footer.jsx";
@@ -13,7 +13,10 @@ function AppLayout() {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-    const currentTitle = matches.find(match => match.handle?.title)?.handle?.title || PageTitle;
+    const currentTitle = useMemo(() => {
+        const match = matches.find(match => match.handle?.title);
+        return match?.handle?.title || PageTitle;
+    }, [matches]);
 
     return (
         <Box sx={{

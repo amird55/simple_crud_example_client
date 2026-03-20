@@ -21,16 +21,6 @@ function Footer() {
             <Typography variant="body2" >
                 &copy; {new Date().getFullYear()} Amir Dagan
             </Typography>
-            <Typography variant="body2" >
-                עיצוב: &nbsp;
-                <a 
-                    href="https://inbald6.wixsite.com/inbal-d-portfolio" 
-                    target="_blank"
-                    style={{ color: FooterTxtColor }}
-                >
-                    ענבל דגן
-                </a>
-            </Typography>
         </Paper>
     );
 }

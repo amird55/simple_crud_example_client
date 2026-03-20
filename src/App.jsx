@@ -26,23 +26,23 @@ const cacheRtl = createCache({
 function App() {
 
   return (
-      <ConfirmProvider
-          defaultOptions={{
-              dialogProps: {
-                  PaperProps: {
-                      sx: {
-                          borderRadius: '12px',
-                      },
-                  }
-              },
-              confirmationButtonProps: {
-                  variant: 'contained',
-              },
-              cancellationButtonProps: {
-                  variant: 'outlined',
-              }
-          }}
-      >
+      // <ConfirmProvider
+      //     defaultOptions={{
+      //         dialogProps: {
+      //             PaperProps: {
+      //                 sx: {
+      //                     borderRadius: '12px',
+      //                 },
+      //             }
+      //         },
+      //         confirmationButtonProps: {
+      //             variant: 'contained',
+      //         },
+      //         cancellationButtonProps: {
+      //             variant: 'outlined',
+      //         }
+      //     }}
+      // >
           <ToastProvider >
               <CacheProvider value={cacheRtl}>
                   <ThemeProvider theme={theme}>
@@ -51,7 +51,7 @@ function App() {
                   </ThemeProvider>
               </CacheProvider>
           </ToastProvider>
-      </ConfirmProvider>
+      // </ConfirmProvider>
   )
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { AppBar, Toolbar, Typography, IconButton, useMediaQuery, useTheme, Box
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -7,7 +7,10 @@ import { PageTitle, HeaderHeight } from "../theme_params.jsx";
 function Header({ onMenuClick , title = PageTitle}) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    document.title = title;
+    
+    useEffect(() => {
+        document.title = title;
+    }, [title]);
     
     return (
         <AppBar
@@ -35,7 +38,7 @@ function Header({ onMenuClick , title = PageTitle}) {
                 <Typography variant="h6" component="h1" sx={{pr:3}}>
                     {PageTitle}
                 </Typography>
-            
+        
                 {/* Spacer to push content to the edges */}
                 <Box sx={{ flexGrow: 1 }} />
 
