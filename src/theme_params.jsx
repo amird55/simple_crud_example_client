@@ -1,7 +1,5 @@
 import {  createTheme } from '@mui/material';
 
-const backURL = "http://localhost:4466/api"; //dev env
-const PageTitle = "תוכנה לדוגמה";
 const FontSizeMultiplier = 1.4;
 const menuWidth = 240;
 const HeaderHeight = 80;
@@ -413,7 +411,6 @@ const theme = createTheme({
 });
 
 export {
-    PageTitle,
     menuWidth,
     HeaderHeight,
     FooterHeight,
@@ -421,7 +418,6 @@ export {
     HeaderTxtColor,
     FooterBgColor,
     FooterTxtColor,
-    backURL,
     SnackbarAlertStyles,
     SnackbarBottom,
     ConfirmDialogColors,

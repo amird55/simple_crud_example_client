@@ -4,7 +4,8 @@ import NavBar from "./NavBar";
 import Footer from "./Footer.jsx";
 import { Outlet, useMatches } from "react-router";
 import { Box, Typography } from '@mui/material';
-import {menuWidth, HeaderHeight, FooterHeight, FooterBgColor, HeaderBgColor, PageTitle} from "../theme_params.jsx";
+import {menuWidth, HeaderHeight, FooterHeight, FooterBgColor, HeaderBgColor} from "../theme_params.jsx";
+import {PageTitle} from "../vars.jsx";
 
 function AppLayout() {
     const [mobileOpen, setMobileOpen] = useState(false);
