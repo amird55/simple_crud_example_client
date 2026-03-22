@@ -1,4 +1,4 @@
-//npm install react-router @mui/material @emotion/react @emotion/styled @mui/icons-material   stylis-plugin-rtl @emotion/cache material-ui-confirm   
+//npm install react-router @mui/material @emotion/react @emotion/styled @mui/icons-material   stylis-plugin-rtl @emotion/cache material-ui-confirm  @tanstack/react-query   
 
 import './App.css'
 
@@ -17,6 +17,9 @@ import { ThemeProvider } from '@mui/material';
 import { theme } from './theme_params.jsx';
 import { CssBaseline } from '@mui/material';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+const queryClient = new QueryClient();
+
 // Create rtl cache
 const cacheRtl = createCache({
     key: 'muirtl',
@@ -26,32 +29,34 @@ const cacheRtl = createCache({
 function App() {
 
   return (
-      // <ConfirmProvider
-      //     defaultOptions={{
-      //         dialogProps: {
-      //             PaperProps: {
-      //                 sx: {
-      //                     borderRadius: '12px',
-      //                 },
-      //             }
-      //         },
-      //         confirmationButtonProps: {
-      //             variant: 'contained',
-      //         },
-      //         cancellationButtonProps: {
-      //             variant: 'outlined',
-      //         }
-      //     }}
-      // >
-          <ToastProvider >
-              <CacheProvider value={cacheRtl}>
-                  <ThemeProvider theme={theme}>
-                      <CssBaseline /> {/* This normalizes the styles */}
-                      <RouterProvider router={router} />
-                  </ThemeProvider>
-              </CacheProvider>
-          </ToastProvider>
-      // </ConfirmProvider>
+      <QueryClientProvider client={queryClient}>
+          <ConfirmProvider
+              defaultOptions={{
+                  dialogProps: {
+                      PaperProps: {
+                          sx: {
+                              borderRadius: '12px',
+                          },
+                      }
+                  },
+                  confirmationButtonProps: {
+                      variant: 'contained',
+                  },
+                  cancellationButtonProps: {
+                      variant: 'outlined',
+                  }
+              }}
+          >
+              <ToastProvider >
+                  <CacheProvider value={cacheRtl}>
+                      <ThemeProvider theme={theme}>
+                          <CssBaseline /> {/* This normalizes the styles */}
+                          <RouterProvider router={router} />
+                      </ThemeProvider>
+                  </CacheProvider>
+              </ToastProvider>
+          </ConfirmProvider>
+      </QueryClientProvider>
   )
 }
 

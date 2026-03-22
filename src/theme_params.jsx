@@ -71,9 +71,9 @@ const ConfirmDialogColors = {
         cancelButtonColor: '#757575'
     },
     delete: {
-        backgroundColor: '#ed6b2d',
+        backgroundColor: '#f8a37a',
         confirmButtonColor: '#9b1c2f',
-        cancelButtonColor: '#757575'
+        cancelButtonColor: '#000000'
     },
     warning: {
         backgroundColor: '#fce5a0',
